@@ -1,1 +1,38 @@
 
+###delete google sheet query###
+Operation: Delete One
+Entity: Sheet Row(s)
+Spareadsheet:user            Sheet Name:baskets 
+table heading row index:1
+Row Index:{{data_table.triggeredRow.rowIndex}}
+
+
+### Insert google sheet query ###
+Operation: Insert One
+Entity: Sheet Row(s)
+Spareadsheet:user            Sheet Name:baskets 
+table heading row index:1
+Row Index:{{insert_form.formData}}
+
+
+### Selete google sheet query ###
+Operation: Fetch Many 
+Entity: Sheet Row(s)
+Spareadsheet:user            Sheet Name:baskets 
+table heading row index:1
+Filter Format: where clause 
+pagination limit:{{data_table.pageSize}}
+pagination Offset: {{(data_table.pageNo - 1) * data_table.pageSize}}
+
+
+###update google sheet query ###
+Operation: Update One
+Entity: Sheet Row(s)
+Spareadsheet:user            Sheet Name:baskets 
+table heading row index:1
+Update row object:{{
+	{
+		...update_form.formData, 
+		rowIndex:data_table.selectedRow.rowIndex
+	}
+}}
