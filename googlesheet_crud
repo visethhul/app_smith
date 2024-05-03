@@ -36,3 +36,7 @@ Update row object:{{
 		rowIndex:data_table.selectedRow.rowIndex
 	}
 }}
+
+
+
+Update row object:{{data_table.updatedRow}}
