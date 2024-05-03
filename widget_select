@@ -1,0 +1,23 @@
+# select widget :
+     ### source data js: {{
+			get_students.data.map
+			(
+			u => ({
+				name:u.name, 
+				email: u.email 
+				})
+				)
+			   }}
+     
+	### label key js: name
+	### value key js:email
+
+
+# widget list: 
+	###data items: {{get_users.data.users}}
+	###pageination: on 
+	###onPagechange: https://mock-api.appsmith.com/users?page={{List1.pageNo}}&pageSize={{List1.pageSize}}
+
+	###text:{{List1.currentItemsViews}}
+        ###value:{{List1.selectedItem.avatar}}
+
