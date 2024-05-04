@@ -40,3 +40,10 @@ Update row object:{{
 
 
 Update row object:{{data_table.updatedRow}}
+
+Or 
+Update row object: {{
+
+data_table.updatedRow.email,
+data_table.upateRow.nam
+}}
