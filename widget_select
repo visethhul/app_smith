@@ -11,7 +11,23 @@
      
 	### label key js: name
 	### value key js:email
-
+        or 
+        #### source data js: [
+				  {
+				    "name": "Blue",
+				    "code": "BLUE"
+  				},
+  				{
+    					"name": "Green",
+  					  "code": "GREEN"
+  				},
+  				{
+  					  "name": "Red",
+   					 "code": "RED"
+  				}
+				]
+   			### label key js: name
+			### value key js:code
 
 # widget list: 
 	###data items: {{get_users.data.users}}
