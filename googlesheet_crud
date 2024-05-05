@@ -4,7 +4,7 @@ Operation: Delete One
 Entity: Sheet Row(s)
 Spareadsheet:user            Sheet Name:baskets 
 table heading row index:1
-Row Index:{{data_table.triggeredRow.rowIndex}}
+Row Index:{{data_table.triggeredRow.rowIndex}}    // button delete 
 
 
 ### Insert google sheet query ###
@@ -12,7 +12,16 @@ Operation: Insert One
 Entity: Sheet Row(s)
 Spareadsheet:user            Sheet Name:baskets 
 table heading row index:1
-Row Index:{{insert_form.formData}}
+Row object:{{insert_form.formData}}
+or 
+row object: {{data_table.newRow}}
+or 
+row object: {{
+{
+   ...data_table.newRow, "Create At": moment().format('YYYY-MM-DD')        // input data on current time created at 
+}
+}}
+
 
 
 ### Selete google sheet query ###
@@ -43,7 +52,14 @@ Update row object:{{data_table.updatedRow}}
 
 Or 
 Update row object: {{
-
+{
 data_table.updatedRow.email,
 data_table.upateRow.nam
+}
+}}
+
+Or 
+Update row object: {{
+_.omit(data_table.updateRow,'Created At')             //you want updaterow but don't want to add created at row
+
 }}
