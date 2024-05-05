@@ -1,0 +1,4 @@
+######get_movie user
+command:find documnet(s)
+collection js: movies
+Query: { "homepage": "https://movies.disney.com/cruella"}
