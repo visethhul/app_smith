@@ -1,0 +1,27 @@
+###valiation input 
+Data type: email          //Validates and accepts email addresses, ensuring they match the required format.
+Data type: password       //Masks the user's input to hide sensitive information like passwords or PINs.
+Data type: Number         //ermits input of numeric values, restricting non-numeric characters.      
+Data type:Single-line text //Accepts input with a single line of text, typically
+
+
+regex: ~[a-zA-Z] *s 
+
+Valida:{{input1.text.length > 0}}
+
+
+### get table to input 
+Default text:{{get_users.data[0].name}}     // get data from table on column name first row
+Or 
+Default text:{{table01.selectedRow.name}}
+
+##update from input
+Query:update_name 
+UPDATE upplic."users" SET
+"name"='{{Input1.text}}'
+WHERE ID ={{table.selectedRow.id}};
+
+
+Data type: {{table01.selectedRow.name}}
+
+button
