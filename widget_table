@@ -1,1 +1,23 @@
+### Total Record count for mongoDB ###
+on wiget table propety.
 
+Total Record Count :{{get_count.data.n}}
+
+
+
+### Create query ###
+
+name: get_count
+Commands: Count
+Collection: movie
+Query:{}
+
+//////////////////////////////////////////
+
+
+
+
+
+
+
+c
