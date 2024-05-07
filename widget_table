@@ -3,8 +3,6 @@ on wiget table propety.
 
 Total Record Count :{{get_count.data.n}}
 
-
-
 ### Create query ###
 
 name: get_count
@@ -13,6 +11,17 @@ Collection: movie
 Query:{}
 
 //////////////////////////////////////////
+### use the table widget ###
+##create query with posgres sql 
+name: get_users 
+Query: SELECT * FROM uses ORDER BY id LIMIT 30
+
+## table widget property ##
+Table Data: {{get_users.data}} 
+
+sever side paginatin: true
+sortable:true
+emable multi row selection: true 
 
 
 
@@ -20,4 +29,6 @@ Query:{}
 
 
 
-c
+
+
+
