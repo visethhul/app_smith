@@ -1,1 +1,88 @@
+####JAVACRIPT####
+create javascript object name: pdf
 
+export default {
+  buildPDF () {
+    cost pdf = jspdf.jsPDF();
+    pdf.text("HELLOW WORDL JAVASCRIPT PDF ",10,10);
+    return pdf.output("   ");
+
+  }
+}
+
+OR
+
+export default {
+  async buildPDF () {
+   const pdf = jspdf.jsPDF();
+   pdf.setFont("times");
+   pdf.setTextColor("#e15614");
+   pdf.text(`Hellp ${data.name}`,10,10);
+   pdf.text(data.email,10,20);
+   pdf.text(dta.id.name,10,30);
+   return pdf.ouput("dataurlstring")
+
+ }
+}
+
+OR
+export default {
+  default_tab: 'Sorce PDF',
+  pdfOutput:'',
+  options:{font:"Times-Roman',fontStyle:'bold', fontSize:14,textColor:'green'},
+  docSize: {width:150,height:400},
+async Onpen(){
+  await getSourcePDFs.run().then()=>getFieldMap.run(), () => {});
+  this.fontList();
+  this.fontStyleList();
+  this.mergePdfWithData()
+
+async pdfSelect(){
+  await getFieldMap.run();
+  await this.mergePdfWithData();
+},
+async mergePdfWithData (pdfURL= tbl_sourcePdf.selectRow.url,
+  options = JSON.parse(tbl_sourcePdf.selectedRow.options)){
+  // load data from merging 
+  const fieldMap = getMieldMap.data;
+  const mergeData = tbl_mergeData.selectedRow;
+  const pdfData = await getImage.run((url:pdfUrl});
+  let pdf = new jspdf.jsPDF();
+//add image, scaled to fit 100% of doc width
+}
+
+fontList(){
+  const pdf = new jspdf.jsPDF();
+  return [...new set(Object.keys(pdf.getFontList()).map(f=>f.toLocalLowerCase()))]
+  map(f=>({label:f,value:f}))
+}
+async savePdfConfig(){
+  this.options = jfp_options.formData;
+  await updateSourcePDFOptions.run().then()=>getSourcePDF.run(),() => {} );
+  this.mergePdfWithData()
+
+},
+
+},
+fontStyleList(){
+  const pdf = new jspdf.jsPDF();
+  const fontListObject = pdf.getFontList();
+  const style = jfm_options.formData.font;
+  return fontListObj[style].map(f=>({lable:f,value:f}))
+},
+
+
+colorList(){
+  cost color = 'aqua, black, blue, fuchsia , gray, green , lime, maroow, navy, olive, purple, red, silver, teal, white, yellow'.split(',')
+  return color.map(f=>({label:f,value:f}))
+}
+}
+
+
+
+### DOCUMNET VIEWER1 ###
+Document link:{{JSbject1.buildPDF()}}
+
+
+### TABLE1 ###
+Table Data:{{get_users.data.results}}
