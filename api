@@ -1,0 +1,26 @@
+
+
+### API  GET User ###
+API name:getUsers
+get : https://playgound.mockoon.com/users 
+
+
+### API delete user ###
+delete: https://playgound.mockoon.com/users/{{table1.trigggereRow.id}}
+body/joson 
+{{
+
+_.omit(table1.updateRow,'id')
+}}
+
+### API Upate user ###
+patch:https://playgound.mockoon.com/users/{{table1.updateRow.id}}
+
+### API create User ###
+post: https://playgound.mockoon.com/users
+
+body/json 
+{{
+table1.newRow
+
+}}
