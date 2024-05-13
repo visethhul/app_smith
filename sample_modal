@@ -1,0 +1,90 @@
+## New showroom dal entry ##
+
+customer id / name :customer_id_input
+Default Value: {{randomId.randomCustomerID()}}
+
+
+
+## cust_phone_input:
+
+
+##cust_email_input
+
+##sales_id_input
+  default value:{{randomID.randomSaleID()}}
+
+### car_type_input (select)
+Source Data: 
+[
+  {
+    "label": "Hatchback",
+    "value": "Hatchback"
+  },
+  {
+    "label": "Sedan",
+    "value": "Sedan"
+  },
+  {
+    "label": "SUV",
+    "value": "SUV"
+  }
+]
+
+
+### dedel_name_select 
+
+source Data: {{
+select_car_db.data.map( c => 
+({label:c.car_name,
+value:c.car_name
+}))
+}}
+
+}}
+
+### creat query select_car_db: select * from cars_db
+
+### car_model_type_input 
+source data: [
+  {
+    "label": "Base Model",
+    "value": "Base Model"
+  },
+  {
+    "label": "Mid-variant",
+    "value": "Mid-variant"
+  },
+  {
+    "label": "Top Model",
+    "value": "Top Model"
+  }
+]
+
+## car_chassis_no_input 
+  sp_input 
+  currency input
+##feedback rating 
+  max rating:5
+  deault:2.5 
+ tooltips: 
+ [
+  "Terrible",
+  "Bad",
+  "Neutral",
+  "Good",
+  "Great"
+]
+
+##select_salesperson2
+source data:
+{{ select_salesperson.data}}
+
+### close_button_form
+onClick: form_model close 
+
+
+### sumbit form ###
+onClick: 
+{{
+fetch_showroom_db.run(() => select_showroom_db.run(() => resetWidget("form_modal"),()=>{}), () =>{})
+}}
